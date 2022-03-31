@@ -6,7 +6,7 @@
 /*   By: bbelen <bbelen@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 06:31:59 by bbelen            #+#    #+#             */
-/*   Updated: 2022/03/31 13:20:27 by bbelen           ###   ########.fr       */
+/*   Updated: 2022/03/31 16:08:19 by bbelen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_CONFIG_H
 
 # include "map.h"
-# include "../cub3d.h"
+# include "../libft/libft.h"
 
 typedef struct	s_config
 {

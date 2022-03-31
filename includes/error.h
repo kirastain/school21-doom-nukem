@@ -6,14 +6,13 @@
 /*   By: bbelen <bbelen@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 06:01:06 by bbelen            #+#    #+#             */
-/*   Updated: 2022/03/31 14:25:07 by bbelen           ###   ########.fr       */
+/*   Updated: 2022/03/31 16:06:19 by bbelen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ERROR_H
 # define FT_ERROR_H
 
-// #include "../cub3d.h"
 #include "config.h"
 
 # define ERROR_ARGS     1
