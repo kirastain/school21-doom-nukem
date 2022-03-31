@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bbelen <bbelen@21-school.ru>               +#+  +:+       +#+         #
+#    By: bbelen <bbelen@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/06 16:38:20 by bbelen            #+#    #+#              #
-#    Updated: 2020/05/23 15:30:40 by bbelen           ###   ########.fr        #
+#    Updated: 2022/03/31 05:04:51 by bbelen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,19 +27,19 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJS) $(HEADERS)
-		ar -rsc $(NAME) $(OBJS)
+		@ar -rsc $(NAME) $(OBJS)
 
 bonus: all $(BOBJS) $(HEADERS)
-		ar -rsc $(NAME) $(BOBJS)
+		@ar -rsc $(NAME) $(BOBJS)
 
 %.o:%.c
-		gcc $(FLAGS) -o $@ -c $<
+		@gcc $(FLAGS) -o $@ -c $<
 
 clean: 
-		rm -f $(BOBJS) $(OBJS)
+		@rm -f $(BOBJS) $(OBJS)
 
 fclean: clean
-		rm -f $(NAME)
+		@rm -f $(NAME)
 
 re: fclean all
 

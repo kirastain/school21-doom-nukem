@@ -1,0 +1,8 @@
+{
+	"files.associations": {
+		"map.h": "c",
+		"error.h": "c",
+		"cub3d.h": "c",
+		"config.h": "c"
+	}
+}

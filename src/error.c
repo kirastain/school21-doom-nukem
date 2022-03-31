@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbelen <bbelen@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/06 16:33:43 by bbelen            #+#    #+#             */
-/*   Updated: 2022/03/31 07:12:57 by bbelen           ###   ########.fr       */
+/*   Created: 2022/03/31 05:59:10 by bbelen            #+#    #+#             */
+/*   Updated: 2022/03/31 07:58:48 by bbelen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/error.h"
 
-char				*ft_substr(char const *s, unsigned int start, size_t len)
+int	error_args(void)
 {
-	unsigned int	i;
-	char			*s2;
-	char			*p;
+	ft_putstr_fd("Error: Invalid number of arguments\n", 0);
+	return (ERROR_ARGS);
+}
 
-	if (!s)
-		return (NULL);
-	if (start >= ft_strlen(s))
-		return (ft_strdup(""));
-	s2 = (char*)malloc(sizeof(char) * (len + 1));
-	if (!s2)
-		return (NULL);
-	i = 0;
-	p = s2;
-	while (i < len && *s)
-	{
-		s2[i] = s[start + i];
-		i++;
-	}
-	s2[i] = '\0';
-	return (p);
+int	error_map_file(void)
+{
+	ft_putstr_fd("Error: Invalid file\n", 0);
+	return (ERROR_MAP_FILE);
 }

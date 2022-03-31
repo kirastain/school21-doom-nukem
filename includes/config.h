@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   config.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbelen <bbelen@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/06 16:33:43 by bbelen            #+#    #+#             */
-/*   Updated: 2022/03/31 07:12:57 by bbelen           ###   ########.fr       */
+/*   Created: 2022/03/31 06:31:59 by bbelen            #+#    #+#             */
+/*   Updated: 2022/03/31 08:25:40 by bbelen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_CONFIG_H
+# define FT_CONFIG_H
 
-char				*ft_substr(char const *s, unsigned int start, size_t len)
+# include "map.h"
+# include "../cub3d.h"
+
+typedef struct	s_config
 {
-	unsigned int	i;
-	char			*s2;
-	char			*p;
+	t_map   map;
+}				t_config;
 
-	if (!s)
-		return (NULL);
-	if (start >= ft_strlen(s))
-		return (ft_strdup(""));
-	s2 = (char*)malloc(sizeof(char) * (len + 1));
-	if (!s2)
-		return (NULL);
-	i = 0;
-	p = s2;
-	while (i < len && *s)
-	{
-		s2[i] = s[start + i];
-		i++;
-	}
-	s2[i] = '\0';
-	return (p);
-}
+int	init_config(t_config *conf, char *filename);
+
+#endif

@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbelen <bbelen@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/06 16:33:43 by bbelen            #+#    #+#             */
-/*   Updated: 2022/03/31 07:12:57 by bbelen           ###   ########.fr       */
+/*   Created: 2022/03/31 06:01:06 by bbelen            #+#    #+#             */
+/*   Updated: 2022/03/31 08:22:06 by bbelen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_ERROR_H
+# define FT_ERROR_H
 
-char				*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	unsigned int	i;
-	char			*s2;
-	char			*p;
+#include "../cub3d.h"
 
-	if (!s)
-		return (NULL);
-	if (start >= ft_strlen(s))
-		return (ft_strdup(""));
-	s2 = (char*)malloc(sizeof(char) * (len + 1));
-	if (!s2)
-		return (NULL);
-	i = 0;
-	p = s2;
-	while (i < len && *s)
-	{
-		s2[i] = s[start + i];
-		i++;
-	}
-	s2[i] = '\0';
-	return (p);
-}
+# define ERROR_ARGS     1
+# define ERROR_MAP_FILE 2
+
+int error_args();
+int error_map_file();
+
+
+#endif
