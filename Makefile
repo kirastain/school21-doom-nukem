@@ -6,7 +6,7 @@
 #    By: bbelen <bbelen@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 04:53:08 by bbelen            #+#    #+#              #
-#    Updated: 2022/03/31 08:27:58 by bbelen           ###   ########.fr        #
+#    Updated: 2022/03/31 13:14:02 by bbelen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = gcc
 MAKE = make
 HEADER = /includes/*.h ./*.h
 
-SRC = ./src/map.c ./src/config.c ./main.c ./src/error.c
+SRC = ./src/map.c ./src/config.c ./src/error.c ./main.c
 OBJS = $(SRC:.c=.o)
 FLAGS = -Wall -Wextra -Werror
 
@@ -27,6 +27,10 @@ $(NAME): $(OBJS)
 	@cd mlx && $(MAKE)
 	@cp mlx/libmlx.a libmlx.a
 	@echo pre done
+	@$(CC) -o $(NAME) $(FLAGS) $(OBJS) libft.a -Lmlx -lmlx -framework OpenGL -framework AppKit
+	@echo cub3d compiled
+
+cub: $(NAME)
 	@$(CC) -o $(NAME) $(FLAGS) $(OBJS) libft.a -Lmlx -lmlx -framework OpenGL -framework AppKit
 	@echo cub3d compiled
 
